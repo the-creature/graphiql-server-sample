@@ -14,3 +14,5 @@
 4) `yarn migrations` to generate seed data
 5) `yarn seed` to generate seed data
 6) Review schema at http://localhost:4000/graphiql
+
+![preview](https://github.com/the-creature/graphiql-server-sample/blob/master/sample.gif)
