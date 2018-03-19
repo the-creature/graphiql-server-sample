@@ -13,9 +13,9 @@ module.exports = () => {
     reservations.push({
       id: casual.id,
       name: casual.full_name,
-      hotel_name: casual.full_name,
-      arrival_date: startDate,
-      departure_date: endDate,
+      hotelName: casual.full_name,
+      arrivalDate: startDate,
+      departureDate: endDate,
     });
   });
 
