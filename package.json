@@ -5,7 +5,14 @@
   "engines": {
     "node": ">=8"
   },
-  "author": "Liccy Fuentes",
+  "author": "Liccy Fuentes <liccy@inkskill.com>",
+  "keywords": [
+    "promise",
+    "async",
+    "graphQL",
+    "typeScript",
+    "es6"
+  ],
   "scripts": {
     "compile": "npm run clean && npm run gen:type-def && tsc && cp gen/schema.graphql dist/schema.graphql",
     "start": "node api/index.js",
