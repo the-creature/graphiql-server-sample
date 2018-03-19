@@ -1,0 +1,42 @@
+//============ view all records
+{
+  reservations {
+    id
+    name
+    hotelName
+    arrivalDate
+    departureDate
+  }
+}
+
+//============ update record
+mutation ReservationUpdate($reservation: ReservationInput!) {
+  reservationSave(reservation: $reservation) {
+    id
+    name
+    hotelName
+    arrivalDate
+    departureDate
+  }
+}
+
+{
+  "reservation": {
+    "id": "1",
+    "name": "Liccy Fuentes"
+  }
+}
+//============ get record by
+query ReservationQuery($id: ID!) {
+  reservation(id: $id) {
+    id
+    name
+    hotelName
+    arrivalDate
+    departureDate
+  }
+}
+
+{
+  "id": "1"
+}

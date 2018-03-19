@@ -1,0 +1,5 @@
+# Different project billing types
+enum Direction {
+  ASC
+  DESC
+}

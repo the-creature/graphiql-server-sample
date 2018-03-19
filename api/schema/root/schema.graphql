@@ -1,0 +1,23 @@
+# Sort
+input Ordering {
+  field: String!
+  direction: Direction! = ASC
+}
+
+# Root query
+type Query {
+  # Fetch all reservations
+  reservations(sort: Ordering): [Reservation]!
+  # Fetch single reservation
+  reservation(id: ID!): Reservation!
+}
+
+type Mutation {
+  reservationSave(reservation: ReservationInput!): Reservation!
+  reservationRemove(id: ID!): ID!
+}
+
+schema {
+  mutation: Mutation
+  query: Query
+}

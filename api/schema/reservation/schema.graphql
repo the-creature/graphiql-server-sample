@@ -1,0 +1,29 @@
+# Hotel reservation
+type Reservation {
+  # db identifier
+  id: ID!
+  # name
+  name: String!
+  # hotel name
+  hotelName: String
+  # arrival date
+  arrivalDate: String
+  # departure date
+  departureDate: String
+}
+
+input ReservationInput {
+  # db identifier
+  id: ID!
+  # name
+  name: String!
+  # hotel name
+  hotelName: String
+  # arrival date
+  arrivalDate: String
+  # departure date
+  departureDate: String
+}
+
+# GraphQL doesn't come with a date type, adding string
+# todo: add Date support if asked for.

@@ -1,0 +1,37 @@
+{
+  "env": {
+    "jest": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "unicorn",
+    "prettier"
+  ],
+  "extends": [
+    "plugin:unicorn/recommended",
+    "xo-space",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": ["error", {
+      "singleQuote": true,
+      "trailingComma": "es5"
+    }],
+    "unicorn/no-fn-reference-in-iterator": 0,
+    "capitalized-comments": 0,
+    "no-compare-neg-zero": 0,
+    "prefer-promise-reject-errors": 0,
+    "no-multi-assign": 0,
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ]
+  }
+}
