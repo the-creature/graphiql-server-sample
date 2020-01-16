@@ -1,16 +1,16 @@
-import { first, get } from 'lodash';
-import * as moment from 'moment';
-import { Ordering } from '../gen/schema-type-def';
+import { first, get } from "lodash";
+import moment from "moment";
+import { Ordering } from "../gen/schema-type-def";
 
 export default class BaseModel {
   constructor(
     public db: any,
-    protected tableName: string = '',
-    protected alias: string = ''
+    protected tableName: string = "",
+    protected alias: string = ""
   ) {}
 
   get select() {
-    const fromClause = this.tableName + (this.alias ? ` as ${this.alias}` : '');
+    const fromClause = this.tableName + (this.alias ? ` as ${this.alias}` : "");
     return this.db(fromClause);
   }
 
@@ -18,13 +18,13 @@ export default class BaseModel {
     const startDate = moment([year, month]);
     return {
       startDate,
-      endDate: moment(startDate).endOf('month'),
+      endDate: moment(startDate).endOf("month")
     };
   }
 
   public getAll(sort?: Ordering) {
-    const sortBy = get(sort, 'field', 'id');
-    const sortDir = get(sort, 'direction', 'ASC');
+    const sortBy = get(sort, "field", "id");
+    const sortDir = get(sort, "direction", "ASC");
     return this.select.orderBy(sortBy, sortDir);
   }
 
@@ -49,9 +49,9 @@ export default class BaseModel {
   public save(input: any) {
     const { id } = input;
     return this.db(this.tableName)
-      [id ? 'update' : 'insert'](input)
+      [id ? "update" : "insert"](input)
       .where(id ? { id } : {})
-      .returning('id')
+      .returning("id")
       .then(([dbId]: [string]) => [dbId || id]);
   }
 
